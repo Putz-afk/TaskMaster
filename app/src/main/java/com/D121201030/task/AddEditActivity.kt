@@ -31,7 +31,7 @@ class AddEditActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         )[NoteViewModel::class.java]
 
-        prioSetter()
+
         noteTitleEdit = findViewById(R.id.idNoteTitle)
         noteDescEdit = findViewById(R.id.idNoteDesc)
         button = findViewById(R.id.idButton)
@@ -43,11 +43,14 @@ class AddEditActivity : AppCompatActivity() {
             val noteTitle = intent.getStringExtra("noteTitle")
             val noteDescription = intent.getStringExtra("noteDescription")
             noteID = intent.getIntExtra("noteId", -1)
-            button.text = R.string.update_btn_text.toString()
+
+            binding.idATV.setText(intent.getStringExtra("notePriority"))
+
+            button.text = resources.getString(R.string.update_btn_text)
             noteTitleEdit.setText(noteTitle)
             noteDescEdit.setText(noteDescription)
         } else {
-            button.text = R.string.save_btn_text.toString()
+            button.text = resources.getString(R.string.save_btn_text)
         }
 
         button.setOnClickListener {
@@ -82,6 +85,7 @@ class AddEditActivity : AppCompatActivity() {
                 this@AddEditActivity.finish()
             }
         }
+        prioSetter()
     }
 
     fun prioSetter() {

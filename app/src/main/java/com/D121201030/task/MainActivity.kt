@@ -51,8 +51,10 @@ class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
 
     override fun onNoteClick(note: Note) {
         val intent = Intent(this@MainActivity, AddEditActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         intent.putExtra("noteType", "Edit")
         intent.putExtra("noteTitle", note.noteTitle)
+        intent.putExtra("notePriority", note.notePriority)
         intent.putExtra("noteDescription", note.noteDescription)
         intent.putExtra("noteId", note.id)
         startActivity(intent)
