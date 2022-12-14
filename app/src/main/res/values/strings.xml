@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Task Master</string>
+    <string name="date_TV">Last Updated: %1$s</string>
+    <string name="update_btn_text">Update Note</string>
+    <string name="save_btn_text">Save Note</string>
+    <string-array name="priority_list">
+        <item>Penting Mendesak</item>
+        <item>Tidak Penting Mendesak</item>
+        <item>Penting Tidak Mendesak</item>
+        <item>Tidak Mendesak Tidak Penting</item>
+    </string-array>
+</resources>
